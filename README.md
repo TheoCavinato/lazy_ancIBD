@@ -1,6 +1,6 @@
 # lazy ancIBD
 
-You want to use GLIMPSE's genetic map and allele frequencies in ancIBD? Here you go:
+You want to use GLIMPSE's genetic map and allele frequencies in [ancIBD](https://github.com/hringbauer/ancIBD)? Here you go:
 
 ## Original data
 I simulated a pedigree and imputed it. All the information is Ori_data/
@@ -37,7 +37,7 @@ sed 's/ /\t/g' > $FREQ
 ## 3. Converting VCF to HDF5
 ```
 HDF5_FORMAT=H5_converted/simulation.chr20.h5
-python3 Scripts/h5_conversion.py --vcf $VCF --eig_map $EIG_MAP  --out $HDF5_FORMAT (--freq $FREQ)
+python3 Scripts/h5_conversion.py --vcf $VCF --eig_map $EIG_MAP  --out $HDF5_FORMAT --chrom 20 (--freq $FREQ)
 ```
 
 
