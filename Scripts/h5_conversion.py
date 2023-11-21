@@ -6,12 +6,6 @@ import argparse
 # Parameters
 #------------------------------------------------------------------------------# 
 
-#vcf_p = sys.argv[1]
-#vcf_1240K_p = sys.argv[1]
-#map_p = sys.argv[2]
-#snp_p = "afs/v51.1_1240k.snp"
-#h5_p = sys.argv[3]
-
 parser= argparse.ArgumentParser()
 parser.add_argument('--vcf', required=True, help="GLIMPSE ouptut")
 parser.add_argument('--eig_map', required=True, help="EIG format recombination map", default="")
