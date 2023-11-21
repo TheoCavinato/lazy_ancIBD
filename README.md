@@ -4,8 +4,8 @@ You want to use GLIMPSE's genetic map and allele frequencies in [ancIBD](https:/
 
 ## Original data
 I simulated a pedigree and imputed it. All the information is Ori_data/
-simulation.chr20.lowcov.0.5x.imputed.vcf.gz -> contains the imputed genoytpes with GPs + phase
-chr20.b37.gmap.gz -> GMAP used by GLIMPSE for imputation
+* simulation.chr20.lowcov.0.5x.imputed.vcf.gz -> contains the imputed genoytpes with GPs + phase
+* chr20.b37.gmap.gz -> GMAP used by GLIMPSE for imputation
 
 ## 1. Converting GMAP to EIGENSTRAT MAP
 ```
