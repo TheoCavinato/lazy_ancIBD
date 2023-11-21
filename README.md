@@ -13,6 +13,8 @@ VCF=Ori_data/simulation.chr20.lowcov.0.5x.imputed.vcf.gz
 MAP=Ori_data/chr20.b37.gmap.gz
 EIG_MAP=EIGENSTRAT_map/chr20.linear.snp
 
+mkdir EIGENSTRAT_map
+
 # run the conversion
 python3 Scripts/genetic_map_converter.py --vcf $VCF --map $MAP --out $EIG_MAP
 
@@ -36,6 +38,7 @@ sed 's/ /\t/g' > $FREQ
 
 ## 3. Converting VCF to HDF5
 ```
+mkdir H5_converted
 HDF5_FORMAT=H5_converted/simulation.chr20.h5
 python3 Scripts/h5_conversion.py --vcf $VCF --eig_map $EIG_MAP  --out $HDF5_FORMAT --chrom 20 (--freq $FREQ)
 ```
