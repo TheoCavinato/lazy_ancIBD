@@ -36,7 +36,6 @@ if args.freq != "":
         if not freq==p[n]:
             print("At postion", line.split()[0], "please verify that you have a duplication, otherwise their is a problem in your pipeline")
     freq_s.close()
-    print("Frequencies are correct")
 
 #------------------------------------------------------------------------------# 
 # Compare to your recombination map
@@ -47,3 +46,4 @@ for n, line in enumerate(map_s):
     rec, pos = line.rstrip().split()[2:4]
     assert abs(m[n]-float(rec)) < 10e-8
 map_s.close()
+print("Genetic map is correct!")
