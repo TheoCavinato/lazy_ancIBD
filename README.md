@@ -23,10 +23,10 @@ wc -l $EIG_MAP
 ```
 
 ## 2. Computing allele frequencies (optional)
-Be careful: the reference panel should contain the same snp as the imputation for the following command to run correctly:
+Reference panel is to big to be stored on github. Just make sure the reference panel contains the same positions than the imputed vcf.
 ```
 FREQ=Ori_data/allele_frequencies.tsv
-REF=Ori_data/ref_panel.filtered.bcf
+REF=Ori_data/ref_panel.bcf
 bcftools +fill-tags $REF  -Ob -- -t AF | \
 bcftools query -f '%POS %AF %CHROM\n' | \
 awk 'BEGIN{print "pos","af","ch"} {print $0}' | \
@@ -36,7 +36,7 @@ sed 's/ /\t/g' > $FREQ
 
 ## 3. Converting VCF to HDF5
 ```
-HDF5_FORMAT=H5_converted/simulation.3.chr20.h5
+HDF5_FORMAT=H5_converted/simulation.chr20.h5
 python3 Scripts/h5_conversion.py --vcf $VCF --eig_map $EIG_MAP  --out $HDF5_FORMAT (--freq $FREQ)
 ```
 
